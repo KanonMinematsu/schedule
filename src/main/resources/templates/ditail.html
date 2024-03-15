@@ -1,0 +1,24 @@
+<body>
+	<h3>詳細表示</h3>
+ 
+	
+		<table class="table table-striped">
+			<thead>
+				<th>日付</th>
+				<th>件名</th>
+				<th>時間</th>
+				<th>内容</th>
+				<th role="action"></th>
+			</thead>
+			<tbody>
+				<tr class="align-middle" th:each="item2, stat : ${list2}" th:object="${item2}">
+					<td th:text="*{day}"></td>		
+					<td th:text="*{title}"></td>
+					<td th:text="*{time}"></td>		
+					<td th:text="*{task}"></td>
+				
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>

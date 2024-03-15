@@ -1,0 +1,157 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <body>
+
+ 
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+ 
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+ 
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+ 
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+ 
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+ 
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+ 
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+ 
+     
+    </style>
+ 
+   
+    
+  </head>
+  <body>
+    
+ 
+ 
+     
+ 
+      <h2>Section title</h2>
+      <div class="table-responsive small">
+        <table class="table table-striped">
+			<thead>
+				<th>名前     </th>
+				<th>学籍番号     </th>
+				<th>誕生日   </th>
+				<th>電話番号     </th>
+			</thead>
+			<tbody>
+				<tr class="align-middle" th:each="item, stat : ${list}" th:object="${item}">
+				
+					<td th:text="*{name}"></td>
+					<td th:text="*{number}"></td>
+					<td th:text="*{birthday}"></td>
+					<td th:text="*{phone}"></td>
+					
+					<td>
+			
+			<td>		
+ 			<a class="btn btn-warning" th:href="@{/delete/{id}(id=*{id})}">削除</a>
+			</td>
+			
+			<td>		
+ 			<a class="btn btn-warning" th:href="@{/add2/}">スケジュール追加</a>
+			</td>
+			
+			<td>		
+ 			<a class="btn btn-warning" th:href="@{/private/}">スケジュール表示</a>
+			</td>
+				</tr>
+			</tbody>
+		</table>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js" integrity="sha384-gdQErvCNWvHQZj6XZM0dNsAoY4v+j5P1XDpNkcM3HJG1Yx04ecqIHk7+4VBOCHOG" crossorigin="anonymous"></script><script src="dashboard.js"></script></body>
+</html>
+ 
+
+<!--body>
+	<h3>登録者情報</h3>
+ 
+	<th role="action"><button onclick="location.href='/add/'">追加</button></th>
+	<div th:if="${list!=null and !list.empty}">
+		<table class="table table-striped">
+			<thead>
+				<th>名前     </th>
+				<th>学籍番号     </th>
+				<th>誕生日   </th>
+				<th>電話番号     </th>
+			</thead>
+			<tbody>
+				<tr class="align-middle" th:each="item, stat : ${list}" th:object="${item}">
+				
+					<td th:text="*{name}"></td>
+					<td th:text="*{number}"></td>
+					<td th:text="*{birthday}"></td>
+					<td th:text="*{phone}"></td>
+					
+					<td>
+			
+			<td>		
+ 			<a class="btn btn-warning" th:href="@{/delete/{id}(id=*{id})}">削除</a>
+			</td>
+			
+			<td>		
+ 			<a class="btn btn-warning" th:href="@{/add2/}">スケジュール追加</a>
+			</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div th:unless="${list!=null and !list.empty}">
+		<div class="alert alert-danger" role="alert">
+			データなし
+		</div>
+	</div>
+</body-->
